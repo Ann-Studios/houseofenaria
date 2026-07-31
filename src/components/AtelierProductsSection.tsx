@@ -20,8 +20,16 @@ const AtelierProductsSection = () => {
     refetchInterval: 60_000,
     retry: 1,
   });
+  const visibleProducts = products.filter((product) => {
+    const category = product.category
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase();
+    return !['parfum', 'perfume', 'diffuseur', 'diffuser', 'desodorisant', 'air-freshener', 'air freshener']
+      .some((hiddenCategory) => category.includes(hiddenCategory));
+  });
 
-  if (!atelierApiUrl || (!isLoading && products.length === 0)) return null;
+  if (!atelierApiUrl || (!isLoading && visibleProducts.length === 0)) return null;
 
   return (
     <section id="atelier-creations" className="py-24 lg:py-32 bg-secondary/30">
@@ -52,7 +60,7 @@ const AtelierProductsSection = () => {
           </p>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 lg:gap-10">
-            {products.map((product, index) => (
+            {visibleProducts.map((product, index) => (
               <ProductCard
                 key={product.id}
                 name={product.name}

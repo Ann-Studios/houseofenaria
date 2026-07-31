@@ -44,7 +44,7 @@ const Hero = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
             <Button asChild size="lg" className="font-body text-sm tracking-widest uppercase px-10 py-6 bg-primary hover:bg-primary/90">
-              <a href="#perfumes">{t('hero.cta1')}</a>
+              <a href="#jewelry">{t('hero.cta1')}</a>
             </Button>
             <Button asChild variant="outline" size="lg" className="font-body text-sm tracking-widest uppercase px-10 py-6 border-foreground/20 hover:bg-foreground/5">
               <a href="#story">{t('hero.cta2')}</a>

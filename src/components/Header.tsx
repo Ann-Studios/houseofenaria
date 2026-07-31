@@ -29,9 +29,6 @@ const Header = () => {
   };
 
   const navLinks = [
-    { name: t('nav.perfumes'), href: '#perfumes' },
-    { name: t('nav.diffusers'), href: '#diffusers' },
-    { name: t('nav.airFresheners'), href: '#air-fresheners' },
     { name: t('nav.jewelry'), href: '#jewelry' },
     { name: t('nav.bags'), href: '#bags' },
   ];

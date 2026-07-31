@@ -18,8 +18,6 @@ const Footer = () => {
           <div>
             <h4 className="font-display text-lg mb-4">{t('footer.explore')}</h4>
             <ul className="space-y-3 font-body text-sm text-primary-foreground/70">
-              <li><a href="#perfumes" className="hover:text-primary-foreground transition-colors">{t('nav.perfumes')}</a></li>
-              <li><a href="#diffusers" className="hover:text-primary-foreground transition-colors">{t('nav.diffusers')}</a></li>
               <li><a href="#jewelry" className="hover:text-primary-foreground transition-colors">{t('nav.jewelry')}</a></li>
               <li><a href="#bags" className="hover:text-primary-foreground transition-colors">{t('nav.bags')}</a></li>
             </ul>
