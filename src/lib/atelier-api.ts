@@ -23,8 +23,9 @@ type PublicProductsResponse = {
 };
 
 const configuredApiUrl = import.meta.env.VITE_ATELIER_API_URL?.trim();
+const productionApiUrl = 'https://houseofenaria-api.onrender.com/api/v1';
 
-export const atelierApiUrl = configuredApiUrl?.replace(/\/$/, '') ?? '';
+export const atelierApiUrl = (configuredApiUrl || productionApiUrl).replace(/\/$/, '');
 
 export async function getAtelierProducts(): Promise<AtelierProduct[]> {
   if (!atelierApiUrl) return [];
